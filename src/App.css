@@ -42,12 +42,12 @@
 } */
 .video-section {
   position: relative;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  margin: 0; /* Remove default margins */
+  width: 100vw;
+  height: 100vh !important; /* Force full viewport height */
+  margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrollbars or overflow */
-  display: flex; /* Ensure video stretches */
+  overflow: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -55,17 +55,16 @@
 .video-section video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Scales video to cover container, cropping as needed */
-  object-position: center; /* Centers video content */
-  position: absolute; /* Ensure video fills container */
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
   top: 0;
   left: 0;
-  display: block; /* Remove default inline spacing */
+  display: block;
 }
 
-/* Fix for mobile browsers where 100vh includes browser UI */
-@media (max-width: 768px) {
-  .video-section {
-    height: 100dvh; /* Dynamic viewport height for mobile */
-  }
+/* Ensure no parent styles interfere */
+.video-section {
+  min-height: 100vh !important;
+  max-height: none !important;
 }
