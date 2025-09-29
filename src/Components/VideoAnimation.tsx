@@ -7,13 +7,13 @@ import MetabridgeVideo from '../assets/metabridge-video-new.mp4';
 gsap.registerPlugin(ScrollTrigger);
 
 const VideoAnimation = () => {
-  const containerRef = useRef(null);
-  const videoRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null); // Type for section container
+  const videoRef = useRef<HTMLVideoElement>(null); // Type for video element
 
   useGSAP(() => {
     const container = containerRef.current;
     const video = videoRef.current;
-    if (!container || !video) return;
+    if (!container || !video) return; // Early return if refs are null
 
     let ctx = gsap.context(() => {
       video.addEventListener('loadedmetadata', () => {
@@ -24,7 +24,7 @@ const VideoAnimation = () => {
           scrollTrigger: {
             trigger: container,
             start: 'top top',
-            end: `+=${video.duration * 100}%`, // Reduced to 500% for 5s video (adjust 100 to 50 for faster, 200 for slower)
+            end: `+=${video.duration * 100}%`, // Reduced to 500% for 5s video
             pin: true,
             pinSpacing: true,
             scrub: true,
