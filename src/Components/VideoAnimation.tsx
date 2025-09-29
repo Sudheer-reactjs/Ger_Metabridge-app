@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import MetabridgeVideo from "../assets/metabridge-video-new.mp4"
 
 export default function VideoScrubSection() {
-  const containerRef = useRef(null);
-  const videoRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
