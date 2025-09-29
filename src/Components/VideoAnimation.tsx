@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import MetabridgeVideo from "../assets/metabridge-video-new.mp4"
+import MetabridgeVideo from "../assets/output-1.mp4"
 
 export default function VideoScrubSection() {
   const containerRef = useRef<HTMLDivElement>(null);
